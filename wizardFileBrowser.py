@@ -52,6 +52,7 @@ class WizardFileBrowser(DirectObject):
             frameColor=(1, 1, 1, 1),
             pos=LPoint3f(base.getSize()[0]/2, 0, -base.getSize()[1]/2),
             parent=base.pixel2d,
+            state=DGG.NORMAL,
         )
 
         self.pathEntryWidth = self.screenWidthPx - 125

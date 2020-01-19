@@ -1,9 +1,9 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import sys, os
-import subprocess
+import sys, os, time
 import configparser
+import importlib
 
 from panda3d.core import loadPrcFileData
 loadPrcFileData("", """
@@ -143,12 +143,13 @@ class main(ShowBase):
         self.deployBrowser.show()
 
     def deployExecute(self, ok):
+        self.deployBrowser.hide()
         if not ok:
-            self.deployBrowser.hide()
             return
 
         self.processingScreen.frmProcessing.show()
-        self.processingScreen.waitbar["value"] = 0
+        base.graphicsEngine.renderFrame()
+        base.graphicsEngine.renderFrame()
 
         script = self.deployBrowser.get()
 
@@ -156,12 +157,10 @@ class main(ShowBase):
         # Check if we have an existing python script
         # create it if we don't
         #
-        self.processingScreen.waitbar["value"] = 10
         if not os.path.exists(script):
             with open(script, 'w') as py_setup_script:
                 py_setup_script.write("from setuptools import setup\n")
                 py_setup_script.write("setup()\n")
-        self.processingScreen.waitbar["value"] = 15
 
         #
         # Run the setup python script
@@ -169,18 +168,17 @@ class main(ShowBase):
         folder_name = os.path.realpath(os.path.dirname(script))
         old_location = os.curdir
         try:
-            self.processingScreen.waitbar["value"] = 20
             os.chdir(folder_name)
-            self.processingScreen.waitbar["value"] = 25
-
-            subprocess.run(['python', 'setup.py', 'install'], shell=True)
-            self.processingScreen.waitbar["value"] = 80
+            preArgv = sys.argv
+            sys.argv = [os.path.split(script)[1], "bdist_apps"]
+            pythonFilePath = script
+            spec = importlib.util.spec_from_file_location("", pythonFilePath)
+            module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(module)
+            sys.argv = preArgv
         finally:
             os.chdir(old_location)
-            self.processingScreen.waitbar["value"] = 90
 
-        self.deployBrowser.hide()
-        self.processingScreen.waitbar["value"] = 100
         self.processingScreen.frmProcessing.hide()
 
     def load(self):

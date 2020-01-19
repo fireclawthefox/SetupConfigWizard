@@ -7,7 +7,6 @@ from direct.gui import DirectGuiGlobals as DGG
 
 from direct.gui.DirectFrame import DirectFrame
 from direct.gui.DirectLabel import DirectLabel
-from direct.gui.DirectWaitBar import DirectWaitBar
 from panda3d.core import (
     LPoint3f,
     LVecBase3f,
@@ -42,20 +41,17 @@ class GUI:
             parent=self.frmProcessing,
         )
 
-        self.waitbar = DirectWaitBar(
-            barColor=(0.35, 0.35, 0.5, 1.0),
-            frameColor=(0.0, 0.0, 0.0, 1.0),
-            frameSize=(-150.0, 150.0, -10.0, 10.0),
+        self.lblProcessingInfo = DirectLabel(
+            borderWidth=(2, 2),
+            frameColor=(0.8, 0.8, 0.8, 0.0),
             hpr=LVecBase3f(0, 0, 0),
-            pos=LPoint3f(250, 0, -250),
+            pos=LPoint3f(240, 0, -270),
             scale=LVecBase3f(1, 1, 1),
-            state='normal',
-            text='50%',
-            value=50.0,
+            text='This may take several minutes.',
             text_align=TextNode.A_center,
             text_scale=(12.0, 12.0),
-            text_pos=(0.0, -2.5),
-            text_fg=LVecBase4f(1, 1, 1, 1),
+            text_pos=(0, 0),
+            text_fg=LVecBase4f(0, 0, 0, 1),
             text_bg=LVecBase4f(0, 0, 0, 0),
             parent=self.frmProcessing,
         )
