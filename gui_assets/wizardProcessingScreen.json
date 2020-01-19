@@ -1,0 +1,66 @@
+{
+  "ProjectVersion": "0.2a",
+  "EditorConfig": {
+    "usePixel2D": true,
+    "canvasSize": "(0, 1920, -1080, 0)"
+  },
+  "ComponentList": {
+    "frmProcessing": {
+      "element": {
+        "borderWidth": "(2, 2)",
+        "frameColor": "(1, 1, 1, 1)",
+        "frameSize": "(0.0, 500.0, -478.0, 0.0)",
+        "hpr": "LVecBase3f(0, 0, 0)",
+        "pos": "LPoint3f(0, 0, 0)"
+      },
+      "type": "DirectFrame",
+      "parent": "root",
+      "command": null,
+      "extraArgs": null,
+      "extraOptions": {}
+    },
+    "lblProcessing": {
+      "element": {
+        "borderWidth": "(2, 2)",
+        "frameColor": "(0.8, 0.8, 0.8, 0.0)",
+        "hpr": "LVecBase3f(0, 0, 0)",
+        "pos": "LPoint3f(250, 0, -210)",
+        "scale": "LVecBase3f(1, 1, 1)",
+        "text": "'Processing...'",
+        "text_align": "TextNode.A_center",
+        "text_scale": "(24, 24)",
+        "text_pos": "(0, 0)",
+        "text_fg": "LVecBase4f(0, 0, 0, 1)",
+        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+      },
+      "type": "DirectLabel",
+      "parent": "frmProcessing",
+      "command": null,
+      "extraArgs": null,
+      "extraOptions": {}
+    },
+    "waitbar": {
+      "element": {
+        "barColor": "(0.35, 0.35, 0.5, 1.0)",
+        "frameColor": "(0.0, 0.0, 0.0, 1.0)",
+        "frameSize": "(-150.0, 150.0, -10.0, 10.0)",
+        "hpr": "LVecBase3f(0, 0, 0)",
+        "pos": "LPoint3f(250, 0, -250)",
+        "scale": "LVecBase3f(1, 1, 1)",
+        "state": "'normal'",
+        "text": "'50%'",
+        "value": "50.0",
+        "text_align": "TextNode.A_center",
+        "text_scale": "(12.0, 12.0)",
+        "text_pos": "(0.0, -2.5)",
+        "text_fg": "LVecBase4f(1, 1, 1, 1)",
+        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+      },
+      "type": "DirectWaitBar",
+      "parent": "frmProcessing",
+      "command": null,
+      "extraArgs": null,
+      "extraOptions": {}
+    }
+  }
+}
