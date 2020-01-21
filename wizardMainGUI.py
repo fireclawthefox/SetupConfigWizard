@@ -402,6 +402,7 @@ class GUI:
             frameSize=(-225.0, 225.0, -200.0, 0.0),
             hpr=LVecBase3f(0, 0, 0),
             pos=LPoint3f(0, 0, 40),
+            scrollBarWidth=20,
             state='normal',
             horizontalScroll_borderWidth=(2, 2),
             horizontalScroll_frameSize=(-0.05, 0.05, -10.0, 10.0),
@@ -442,11 +443,12 @@ class GUI:
             frameSize=(-225.0, 225.0, -240.0, 0.0),
             hpr=LVecBase3f(0, 0, 0),
             pos=LPoint3f(0, 0, 80),
+            scrollBarWidth=20,
             state='normal',
             horizontalScroll_borderWidth=(2, 2),
             horizontalScroll_frameSize=(-0.05, 0.05, -10.0, 10.0),
             horizontalScroll_hpr=LVecBase3f(0, 0, 0),
-            horizontalScroll_pos=LPoint3f(-11.7953, 0, -228),
+            horizontalScroll_pos=LPoint3f(0, 0, 0),
             horizontalScroll_decButton_borderWidth=(2, 2),
             horizontalScroll_decButton_frameSize=(-0.05, 0.05, -10.0, 10.0),
             horizontalScroll_decButton_hpr=LVecBase3f(0, 0, 0),
@@ -536,7 +538,6 @@ class GUI:
             borderWidth=(0.0, 0.0),
             frameSize=(-86.25, 69.65, -7.8, 21.55),
             hpr=LVecBase3f(0, 0, 0),
-            indicatorValue=1,
             pos=LPoint3f(155, 0, -85),
             scale=LVecBase3f(0.5, 0.5, 0.5),
             text='Plugins',
@@ -665,6 +666,7 @@ class GUI:
             frameSize=(-225.0, 225.0, -200.0, 0.0),
             hpr=LVecBase3f(0, 0, 0),
             pos=LPoint3f(0, 0, 40),
+            scrollBarWidth=20,
             state='normal',
             horizontalScroll_borderWidth=(2, 2),
             horizontalScroll_frameSize=(-0.05, 0.05, -10.0, 10.0),
@@ -820,22 +822,25 @@ class GUI:
             frameSize=(-225.0, 225.0, -200.0, 0.0),
             hpr=LVecBase3f(0, 0, 0),
             pos=LPoint3f(0, 0, 40),
+            scrollBarWidth=20,
             state='normal',
             horizontalScroll_borderWidth=(2, 2),
+            horizontalScroll_frameSize=(-0.05, 0.05, -10.0, 10.0),
             horizontalScroll_hpr=LVecBase3f(0, 0, 0),
             horizontalScroll_pos=LPoint3f(0, 0, 0),
             horizontalScroll_decButton_borderWidth=(2, 2),
             horizontalScroll_decButton_frameSize=(-0.05, 0.05, -10.0, 10.0),
             horizontalScroll_decButton_hpr=LVecBase3f(0, 0, 0),
-            horizontalScroll_decButton_pos=LPoint3f(-215, 0, -190),
+            horizontalScroll_decButton_pos=LPoint3f(0, 0, 0),
             horizontalScroll_incButton_borderWidth=(2, 2),
             horizontalScroll_incButton_frameSize=(-0.05, 0.05, -10.0, 10.0),
             horizontalScroll_incButton_hpr=LVecBase3f(0, 0, 0),
-            horizontalScroll_incButton_pos=LPoint3f(195, 0, -190),
+            horizontalScroll_incButton_pos=LPoint3f(0, 0, 0),
             horizontalScroll_thumb_borderWidth=(2, 2),
             horizontalScroll_thumb_hpr=LVecBase3f(0, 0, 0),
-            horizontalScroll_thumb_pos=LPoint3f(-42.1845, 0, -190),
+            horizontalScroll_thumb_pos=LPoint3f(0, 0, 0),
             verticalScroll_borderWidth=(2, 2),
+            verticalScroll_frameSize=(-10.0, 10.0, -0.05, 0.05),
             verticalScroll_hpr=LVecBase3f(0, 0, 0),
             verticalScroll_pos=LPoint3f(0, 0, 0),
             verticalScroll_decButton_borderWidth=(2, 2),
@@ -880,9 +885,218 @@ class GUI:
             value=[],
         )
 
-        self.rbMetadata.setOthers([self.rbMetadata,self.rbPlatforms,self.rbPlugins,self.rbApplications,self.rbInclude,self.rbExclude,])
-        self.rbPlatforms.setOthers([self.rbMetadata,self.rbPlatforms,self.rbPlugins,self.rbApplications,self.rbInclude,self.rbExclude,])
-        self.rbPlugins.setOthers([self.rbMetadata,self.rbPlatforms,self.rbPlugins,self.rbApplications,self.rbInclude,self.rbExclude,])
-        self.rbApplications.setOthers([self.rbMetadata,self.rbPlatforms,self.rbPlugins,self.rbApplications,self.rbInclude,self.rbExclude,])
-        self.rbInclude.setOthers([self.rbMetadata,self.rbPlatforms,self.rbPlugins,self.rbApplications,self.rbInclude,self.rbExclude,])
-        self.rbExclude.setOthers([self.rbExclude,self.rbInclude,self.rbApplications,self.rbPlatforms,self.rbPlugins,self.rbMetadata,])
+        self.txtVersion = DirectEntry(
+            borderWidth=(0.167, 0.167),
+            hpr=LVecBase3f(0, 0, 0),
+            overflow=1,
+            pos=LPoint3f(-60, 0, 10),
+            scale=LVecBase3f(12, 12, 12),
+            width=20.0,
+            text_align=TextNode.A_left,
+            text_scale=(1, 1),
+            text_pos=(0, 0),
+            text_fg=LVecBase4f(0, 0, 0, 1),
+            text_bg=LVecBase4f(0, 0, 0, 0),
+            parent=self.frmMetadata,
+        )
+
+        self.lblVersion = DirectLabel(
+            borderWidth=(2, 2),
+            frameColor=(0.8, 0.8, 0.8, 0.0),
+            hpr=LVecBase3f(0, 0, 0),
+            pos=LPoint3f(-140, 0, 10),
+            scale=LVecBase3f(1, 1, 1),
+            text='Version',
+            text_align=TextNode.A_center,
+            text_scale=(12.0, 12.0),
+            text_pos=(0, 0),
+            text_fg=LVecBase4f(0, 0, 0, 1),
+            text_bg=LVecBase4f(0, 0, 0, 0),
+            parent=self.frmMetadata,
+        )
+
+        self.frmAdvanced = DirectFrame(
+            borderWidth=(2, 2),
+            frameColor=(1, 1, 1, 1),
+            frameSize=(-250.0, 250.0, -180.0, 150.0),
+            hpr=LVecBase3f(0, 0, 0),
+            pos=LPoint3f(250, 0, -245),
+            relief=3,
+            parent=rootParent,
+        )
+
+        self.lblAdvanced = DirectLabel(
+            borderWidth=(2, 2),
+            frameColor=(0.8, 0.8, 0.8, 0.0),
+            hpr=LVecBase3f(0, 0, 0),
+            pos=LPoint3f(0, 0, 110),
+            scale=LVecBase3f(1, 1, 1),
+            text='Advanced',
+            text_align=TextNode.A_center,
+            text_scale=(12.0, 12.0),
+            text_pos=(0, 0),
+            text_fg=LVecBase4f(0, 0, 0, 1),
+            text_bg=LVecBase4f(0, 0, 0, 0),
+            parent=self.frmAdvanced,
+        )
+
+        self.lblBuildBase = DirectLabel(
+            borderWidth=(2, 2),
+            frameColor=(0.8, 0.8, 0.8, 0.0),
+            hpr=LVecBase3f(0, 0, 0),
+            pos=LPoint3f(-180, 0, 70),
+            scale=LVecBase3f(1, 1, 1),
+            text='Build directory',
+            text_align=TextNode.A_center,
+            text_scale=(12.0, 12.0),
+            text_pos=(0, 0),
+            text_fg=LVecBase4f(0, 0, 0, 1),
+            text_bg=LVecBase4f(0, 0, 0, 0),
+            parent=self.frmAdvanced,
+        )
+
+        self.txtBuildBase = DirectEntry(
+            borderWidth=(0.167, 0.167),
+            hpr=LVecBase3f(0, 0, 0),
+            pos=LPoint3f(-60, 0, 70),
+            scale=LVecBase3f(12, 12, 12),
+            width=20.0,
+            text_align=TextNode.A_left,
+            text_scale=(1, 1),
+            text_pos=(0, 0),
+            text_fg=LVecBase4f(0, 0, 0, 1),
+            text_bg=LVecBase4f(0, 0, 0, 0),
+            parent=self.frmAdvanced,
+        )
+
+        self.lblRequirementsPaths = DirectLabel(
+            borderWidth=(2, 2),
+            frameColor=(0.8, 0.8, 0.8, 0.0),
+            hpr=LVecBase3f(0, 0, 0),
+            pos=LPoint3f(-180, 0, 40),
+            scale=LVecBase3f(1, 1, 1),
+            text='Requirements file',
+            text_align=TextNode.A_center,
+            text_scale=(12.0, 12.0),
+            text_pos=(0, 0),
+            text_fg=LVecBase4f(0, 0, 0, 1),
+            text_bg=LVecBase4f(0, 0, 0, 0),
+            parent=self.frmAdvanced,
+        )
+
+        self.txtRequirementsPaths = DirectEntry(
+            borderWidth=(0.167, 0.167),
+            hpr=LVecBase3f(0, 0, 0),
+            pos=LPoint3f(-60, 0, 40),
+            scale=LVecBase3f(12, 12, 12),
+            width=20.0,
+            text_align=TextNode.A_left,
+            text_scale=(1, 1),
+            text_pos=(0, 0),
+            text_fg=LVecBase4f(0, 0, 0, 1),
+            text_bg=LVecBase4f(0, 0, 0, 0),
+            parent=self.frmAdvanced,
+        )
+
+        self.txtOptimizedWheels = DirectLabel(
+            borderWidth=(2, 2),
+            frameColor=(0.8, 0.8, 0.8, 0.0),
+            hpr=LVecBase3f(0, 0, 0),
+            pos=LPoint3f(-180, 0, 10),
+            scale=LVecBase3f(1, 1, 1),
+            text='Use optimized wheels',
+            text_align=TextNode.A_center,
+            text_scale=(12.0, 12.0),
+            text_pos=(0, 0),
+            text_fg=LVecBase4f(0, 0, 0, 1),
+            text_bg=LVecBase4f(0, 0, 0, 0),
+            parent=self.frmAdvanced,
+        )
+
+        self.cbOptimizedWheels = DirectCheckButton(
+            borderWidth=(2, 2),
+            hpr=LVecBase3f(0, 0, 0),
+            pos=LPoint3f(70, 0, 15),
+            scale=LVecBase3f(0.5, 0.5, 0.5),
+            text='',
+            indicator_borderWidth=(2, 2),
+            indicator_hpr=LVecBase3f(0, 0, 0),
+            indicator_pos=LPoint3f(-11, 0, -7.2),
+            indicator_relief='sunken',
+            indicator_text_align=TextNode.A_center,
+            indicator_text_scale=(24, 24),
+            indicator_text_pos=(0, -0.2),
+            indicator_text_fg=LVecBase4f(0, 0, 0, 1),
+            indicator_text_bg=LVecBase4f(0, 0, 0, 0),
+            text_align=TextNode.A_center,
+            text_scale=(12.0, 12.0),
+            text_pos=(0, 0),
+            text_fg=LVecBase4f(0, 0, 0, 1),
+            text_bg=LVecBase4f(0, 0, 0, 0),
+            parent=self.frmAdvanced,
+        )
+
+        self.lblOptimizedWheelsIndex = DirectLabel(
+            borderWidth=(2, 2),
+            frameColor=(0.8, 0.8, 0.8, 0.0),
+            hpr=LVecBase3f(0, 0, 0),
+            pos=LPoint3f(-180, 0, -20),
+            scale=LVecBase3f(1, 1, 1),
+            text='Optimized wheel index',
+            text_align=TextNode.A_center,
+            text_scale=(12.0, 12.0),
+            text_pos=(0, 0),
+            text_fg=LVecBase4f(0, 0, 0, 1),
+            text_bg=LVecBase4f(0, 0, 0, 0),
+            parent=self.frmAdvanced,
+        )
+
+        self.txtOptimizedWheelsIndex = DirectEntry(
+            borderWidth=(0.167, 0.167),
+            hpr=LVecBase3f(0, 0, 0),
+            pos=LPoint3f(-60, 0, -20),
+            scale=LVecBase3f(12, 12, 12),
+            width=20.0,
+            text_align=TextNode.A_left,
+            text_scale=(1, 1),
+            text_pos=(0, 0),
+            text_fg=LVecBase4f(0, 0, 0, 1),
+            text_bg=LVecBase4f(0, 0, 0, 0),
+            parent=self.frmAdvanced,
+        )
+
+        self.rbAdvanced = DirectRadioButton(
+            borderWidth=(0.0, 0.0),
+            hpr=LVecBase3f(0, 0, 0),
+            indicatorValue=1,
+            pos=LPoint3f(350, 0, -65),
+            scale=LVecBase3f(0.5, 0.5, 0.5),
+            text='Advanced',
+            indicator_borderWidth=(2, 2),
+            indicator_hpr=LVecBase3f(0, 0, 0),
+            indicator_pos=LPoint3f(-75.65, 0, 0.449999),
+            indicator_relief=3,
+            indicator_text_align=TextNode.A_center,
+            indicator_text_scale=(24, 24),
+            indicator_text_pos=(0, -0.25),
+            indicator_text_fg=LVecBase4f(0, 0, 0, 1),
+            indicator_text_bg=LVecBase4f(0, 0, 0, 0),
+            text_align=TextNode.A_center,
+            text_scale=(24, 24),
+            text_pos=(0, 0),
+            text_fg=LVecBase4f(0, 0, 0, 1),
+            text_bg=LVecBase4f(0, 0, 0, 0),
+            parent=rootParent,
+            command=base.messenger.send,
+            extraArgs=["selectTab", ["advanced"]],
+            variable=[],
+            value=[],
+        )
+
+        self.rbMetadata.setOthers([self.rbMetadata,self.rbPlatforms,self.rbPlugins,self.rbApplications,self.rbInclude,self.rbExclude,self.rbAdvanced,])
+        self.rbPlatforms.setOthers([self.rbMetadata,self.rbPlatforms,self.rbPlugins,self.rbApplications,self.rbInclude,self.rbExclude,self.rbAdvanced,])
+        self.rbPlugins.setOthers([self.rbMetadata,self.rbPlatforms,self.rbPlugins,self.rbApplications,self.rbInclude,self.rbExclude,self.rbAdvanced,])
+        self.rbApplications.setOthers([self.rbMetadata,self.rbPlatforms,self.rbPlugins,self.rbApplications,self.rbInclude,self.rbExclude,self.rbAdvanced,])
+        self.rbInclude.setOthers([self.rbMetadata,self.rbPlatforms,self.rbPlugins,self.rbApplications,self.rbInclude,self.rbExclude,self.rbAdvanced,])
+        self.rbExclude.setOthers([self.rbMetadata,self.rbPlatforms,self.rbPlugins,self.rbApplications,self.rbInclude,self.rbExclude,self.rbAdvanced,])
+        self.rbAdvanced.setOthers([self.rbExclude,self.rbInclude,self.rbApplications,self.rbPlugins,self.rbPlatforms,self.rbMetadata,self.rbAdvanced,])

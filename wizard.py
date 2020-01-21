@@ -17,6 +17,7 @@ from direct.showbase.ShowBase import ShowBase
 from panda3d.core import TextNode
 from direct.gui import DirectGuiGlobals as DGG
 from direct.gui.DirectCheckButton import DirectCheckButton
+from direct.gui.DirectDialog import OkDialog
 
 from wizardMainGUI import GUI as MainGUI
 from wizardPatternElement import GUI as PatternElement
@@ -92,18 +93,21 @@ class main(ShowBase):
         self.accept("addIncludePattern", self.addIncludePattern)
         self.accept("addExcludePattern", self.addExcludePattern)
 
-        #HACK: scrollbar size
-        self.main_gui.frmApplicationSelection["scrollBarWidth"] = 20
-        self.main_gui.frmPluginSelection["scrollBarWidth"] = 20
-        self.main_gui.frmIncludePatterns["scrollBarWidth"] = 20
+        # PLATFORM SUPPORT: Android support is currently not fully available
+        self.main_gui.lblMobile.hide()
+        self.main_gui.cbAndroid.hide()
 
         # Add some default entries
+        self.main_gui.txtVersion.set("0.0.0")
+
         self.addIncludePattern()
         self.include_patterns[0].txtPattern.set("**/*.png")
 
         self.addApplication()
         self.applications[0].txtName.set("Name")
         self.applications[0].txtPath.set("main.py")
+
+        self.main_gui.cbOptimizedWheels["indicatorValue"] = True
 
         # select the first tab
         self.main_gui.rbMetadata.check()
@@ -123,6 +127,7 @@ class main(ShowBase):
         self.main_gui.frmExclude.hide()
         self.main_gui.frmPlugins.hide()
         self.main_gui.frmApplications.hide()
+        self.main_gui.frmAdvanced.hide()
 
         # only show the desired one
         if tab == "metadata":
@@ -137,6 +142,8 @@ class main(ShowBase):
             self.main_gui.frmPlugins.show()
         elif tab == "applications":
             self.main_gui.frmApplications.show()
+        elif tab == "advanced":
+            self.main_gui.frmAdvanced.show()
 
     def deploy(self):
         self.deployBrowser.folderMoveIn(os.path.dirname(self.filePath))
@@ -163,8 +170,17 @@ class main(ShowBase):
                 py_setup_script.write("setup()\n")
 
         #
+        # Check if we have a requirements.txt file
+        #
+        if self.setup_config.get("build_apps", "requirements_path", fallback="") == "":
+            # create a default requirements.txt
+            with open(os.path.join(os.path.dirname(script), "requirements.txt"), 'w') as requirements:
+                requirements.write("panda3d")
+
+        #
         # Run the setup python script
         #
+        hasError = False
         folder_name = os.path.realpath(os.path.dirname(script))
         old_location = os.curdir
         try:
@@ -176,8 +192,50 @@ class main(ShowBase):
             module = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(module)
             sys.argv = preArgv
+        except:
+            print(sys.exc_info())
+            hasError = True
+            dlg = OkDialog(
+                frameColor=(1.0, 0.0, 0.0, 1.0),
+                frameSize=(-0.5, 0.5, -0.3, 0.1),
+                pos=(250, 0, -200),
+                scale=(300, 300, 300),
+                state=DGG.NORMAL,
+                relief=DGG.RIDGE,
+                text="Error while building packages!\nSee terminal output for more\ninformation.",
+                text_align=TextNode.A_center,
+                text_fg=(1, 1, 1, 1),
+                parent=base.pixel2d
+            )
+            dlg["text_pos"] = (0, -0.005)
+            dlg.buttonList[0].setZ(dlg.buttonList[0], 0.025)
+            dlg["Button0_frameSize"] = (-0.1, 0.1, -0.017, 0.05)
+            def destroyDlg(args):
+                dlg.destroy()
+            dlg["command"] = destroyDlg
+            dlg.show()
         finally:
             os.chdir(old_location)
+
+        if not hasError:
+            dlg = OkDialog(
+                frameColor=(0.2, 0.9, 0.2, 1.0),
+                frameSize=(-0.3, 0.3, -0.3, 0.1),
+                pos=(250, 0, -200),
+                scale=(300, 300, 300),
+                state=DGG.NORMAL,
+                relief=DGG.RIDGE,
+                text="Build Successful!",
+                text_align=TextNode.A_center,
+                parent=base.pixel2d
+            )
+            dlg["text_pos"] = (0, -0.005)
+            dlg.buttonList[0].setZ(dlg.buttonList[0], 0.025)
+            dlg["Button0_frameSize"] = (-0.1, 0.1, -0.017, 0.05)
+            def destroyDlg(args):
+                dlg.destroy()
+            dlg["command"] = destroyDlg
+            dlg.show()
 
         self.processingScreen.frmProcessing.hide()
 
@@ -191,8 +249,13 @@ class main(ShowBase):
             return
         self.filePath = self.loadBrowser.get()
         self.setup_config.read(self.filePath)
+
+        #
+        # Clear and load metadata
+        #
         self.main_gui.txtAppName.set(self.setup_config.get("metadata", "name", fallback=""))
         self.main_gui.txtAuthor.set(self.setup_config.get("metadata", "author", fallback=""))
+        self.main_gui.txtVersion.set(self.setup_config.get("metadata", "version", fallback=""))
 
         #
         # Clear and load include patterns
@@ -246,7 +309,7 @@ class main(ShowBase):
                 idx += 1
 
         #
-        # Clear and load latforms
+        # Clear and load platforms
         #
         platforms = self.setup_config.get("build_apps", "platforms", fallback="")
         self.main_gui.cbLinux["indicatorValue"] = False
@@ -283,6 +346,11 @@ class main(ShowBase):
                 if plugin["text"] in DEFAULT_PLUGINS:
                     plugin["indicatorValue"] = True
 
+        self.main_gui.txtBuildBase.set(self.setup_config.get("build_apps", "build_base", fallback=""))
+        self.main_gui.txtRequirementsPaths.set(self.setup_config.get("build_apps", "requirements_path", fallback=""))
+        self.main_gui.cbOptimizedWheels["indicatorValue"] = self.setup_config.getboolean("build_apps", "use_optimized_wheels", fallback=True)
+        self.main_gui.txtOptimizedWheelsIndex.set(self.setup_config.get("build_apps", "optimized_wheel_index", fallback=""))
+
         self.loadBrowser.hide()
 
     def save(self):
@@ -301,6 +369,7 @@ class main(ShowBase):
         self.setup_config["metadata"] = {}
         self.setup_config["metadata"]["name"] = self.main_gui.txtAppName.get()
         self.setup_config["metadata"]["author"] = self.main_gui.txtAuthor.get()
+        self.setup_config["metadata"]["version"] = self.main_gui.txtVersion.get()
 
         #
         # BUILD APPS
@@ -361,6 +430,21 @@ class main(ShowBase):
         #if self.main_gui.cbAndroid["indicatorValue"]:
         #    platforms += "android\n"
         self.setup_config["build_apps"]["platforms"] = platforms.rstrip()
+
+        #
+        # Advanced stuff
+        #
+        buildBase = self.main_gui.txtBuildBase.get()
+        if buildBase != "":
+            self.setup_config["build_apps"]["build_base"] = buildBase
+        requirementsPaths = self.main_gui.txtRequirementsPaths.get()
+        if requirementsPaths != "":
+            self.setup_config["build_apps"]["requirements_paths"] = requirementsPaths
+        if not self.main_gui.cbOptimizedWheels["indicatorValue"]:
+            self.setup_config["build_apps"]["use_optimized_wheels"] = str(self.main_gui.cbOptimizedWheels["indicatorValue"])
+        optimizedWheelsIndex = self.main_gui.txtOptimizedWheelsIndex.get()
+        if optimizedWheelsIndex != "":
+            self.setup_config["build_apps"]["optimized_wheel_index"] = optimizedWheelsIndex
 
         #
         # SAVE SETUP CONFIG FILE
