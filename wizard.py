@@ -350,6 +350,7 @@ class main(ShowBase):
         self.main_gui.txtRequirementsPaths.set(self.setup_config.get("build_apps", "requirements_path", fallback=""))
         self.main_gui.cbOptimizedWheels["indicatorValue"] = self.setup_config.getboolean("build_apps", "use_optimized_wheels", fallback=True)
         self.main_gui.txtOptimizedWheelsIndex.set(self.setup_config.get("build_apps", "optimized_wheel_index", fallback=""))
+        self.main_gui.txtDistDir.set(self.setup_config.get("bdist_apps", "dist_dir", fallback=""))
 
         self.loadBrowser.hide()
 
@@ -445,6 +446,18 @@ class main(ShowBase):
         optimizedWheelsIndex = self.main_gui.txtOptimizedWheelsIndex.get()
         if optimizedWheelsIndex != "":
             self.setup_config["build_apps"]["optimized_wheel_index"] = optimizedWheelsIndex
+
+        #
+        # DISTRIBUTE APPS
+        #
+        self.setup_config["bdist_apps"] = {}
+
+        #
+        # Advanced stuff
+        #
+        distDir = self.main_gui.txtDistDir.get()
+        if distDir != "":
+            self.setup_config["bdist_apps"]["dist_dir"] = distDir
 
         #
         # SAVE SETUP CONFIG FILE

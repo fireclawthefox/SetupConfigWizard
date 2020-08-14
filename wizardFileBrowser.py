@@ -28,13 +28,22 @@ DGG.MWUP = PGButton.getPressPrefix() + MouseButton.wheel_up().getName() + '-'
 DGG.MWDOWN = PGButton.getPressPrefix() + MouseButton.wheel_down().getName() + '-'
 
 class WizardFileBrowser(DirectObject):
-    def __init__(self, command, fileBrowser=False, defaultPath="~", defaultFilename="export.json", tooltip=None, fileExtensions=[]):
+    def __init__(self, command, fileBrowser=False, defaultPath="~", defaultFilename="unnamed.txt", fileExtensions=[], tooltip=None):
+        """
+        A simple file and folder browser
+
+        command: The command that will be called on closing the browser
+        fileBrowser: If set to True the browser will show files, otherwise it will only show folders
+        defaultPath: The initial path the browser will be set to show
+        defaultFilename: The filename that will be set by default, only usefull if fileBrowser is True
+        fileExtensions: A list of extensions. Only files with those extensions will be shown. Only usefull if fileBrowser is True
+        tooltip: An instance of the Tooltip class to display tooltips for certain parts of the editor
+        """
         self.tt = tooltip
-        if tooltip is None:
-            raise Exception("No Tooltip instance given for File Browser")
         self.command = command
         self.showFiles = fileBrowser
         self.fileExtensions = fileExtensions
+        self.showHidden = False
 
         self.currentPath = os.path.expanduser(defaultPath)
         if not os.path.exists(self.currentPath):
@@ -55,7 +64,8 @@ class WizardFileBrowser(DirectObject):
             state=DGG.NORMAL,
         )
 
-        self.pathEntryWidth = self.screenWidthPx - 125
+        self.pathRightMargin = 153
+        self.pathEntryWidth = self.screenWidthPx - self.pathRightMargin
 
         self.pathEntry = DirectEntry(
             parent=self.mainFrame,
@@ -90,8 +100,9 @@ class WizardFileBrowser(DirectObject):
             image_pos=(0,0,4),
         )
         self.btnReload.setTransparency(TransparencyAttrib.M_multisample)
-        self.btnReload.bind(DGG.ENTER, self.tt.show, ["Reload Folder"])
-        self.btnReload.bind(DGG.EXIT, self.tt.hide)
+        if self.tt is not None:
+            self.btnReload.bind(DGG.ENTER, self.tt.show, ["Reload Folder"])
+            self.btnReload.bind(DGG.EXIT, self.tt.hide)
         x += 28
         self.btnFolderUp = DirectButton(
             parent=self.mainFrame,
@@ -109,8 +120,9 @@ class WizardFileBrowser(DirectObject):
             image_pos=(0,0,4),
         )
         self.btnFolderUp.setTransparency(TransparencyAttrib.M_multisample)
-        self.btnFolderUp.bind(DGG.ENTER, self.tt.show, ["Move up one level"])
-        self.btnFolderUp.bind(DGG.EXIT, self.tt.hide)
+        if self.tt is not None:
+            self.btnFolderUp.bind(DGG.ENTER, self.tt.show, ["Move up one level"])
+            self.btnFolderUp.bind(DGG.EXIT, self.tt.hide)
         x += 28
         self.btnFolderNew = DirectButton(
             parent=self.mainFrame,
@@ -128,8 +140,29 @@ class WizardFileBrowser(DirectObject):
             image_pos=(0,0,4),
         )
         self.btnFolderNew.setTransparency(TransparencyAttrib.M_multisample)
-        self.btnFolderNew.bind(DGG.ENTER, self.tt.show, ["Create new folder"])
-        self.btnFolderNew.bind(DGG.EXIT, self.tt.hide)
+        if self.tt is not None:
+            self.btnFolderNew.bind(DGG.ENTER, self.tt.show, ["Create new folder"])
+            self.btnFolderNew.bind(DGG.EXIT, self.tt.hide)
+        x += 28
+        self.btnFolderShowHidden = DirectButton(
+            parent=self.mainFrame,
+            relief=1,
+            frameColor = (
+                (0.8, 0.8, 0.8, 1), # Normal
+                (0.9, 0.9, 1, 1), # Click
+                (0.8, 0.8, 1, 1), # Hover
+                (0.5, 0.5, 0.5, 1)), # Disabled
+            frameSize=(-14, 14, -10, 18),
+            pos=LPoint3f(x, 0, self.screenHeightPxHalf - 25),
+            command=self.folderShowHidden,
+            image="icons/FolderShowHidden.png",
+            image_scale=14,
+            image_pos=(0,0,4),
+        )
+        self.btnFolderShowHidden.setTransparency(TransparencyAttrib.M_multisample)
+        if self.tt is not None:
+            self.btnFolderShowHidden.bind(DGG.ENTER, self.tt.show, ["Show/Hide hidden files and folders"])
+            self.btnFolderShowHidden.bind(DGG.EXIT, self.tt.hide)
 
         color = (
             (0.8, 0.8, 0.8, 1), # Normal
@@ -321,6 +354,8 @@ class WizardFileBrowser(DirectObject):
         unkList = []
 
         for entry in content:
+            if entry.name.startswith(".") and not self.showHidden:
+                continue
             if entry.is_dir():
                 dirList.append(entry)
             elif entry.is_file() and self.showFiles:
@@ -381,6 +416,10 @@ class WizardFileBrowser(DirectObject):
             self.newFolderFrame.show()
         else:
             self.newFolderFrame.hide()
+
+    def folderShowHidden(self):
+        self.showHidden = not self.showHidden
+        self.folderReload()
 
     def folderCreate(self, path=""):
         try:
@@ -482,6 +521,7 @@ class WizardFileBrowser(DirectObject):
             # This event isn't about our window.
             return
 
+
         if window is not None: # window is none if panda3d is not started
             if self.prevScreenSize == base.getSize():
                 return
@@ -494,15 +534,23 @@ class WizardFileBrowser(DirectObject):
             # reposition and resize all gui elements
             self.mainFrame.setPos(self.screenWidthPx/2, 0, -self.screenHeightPx/2)
             self.mainFrame["frameSize"] = (-self.screenWidthPxHalf,self.screenWidthPxHalf,-self.screenHeightPxHalf,self.screenHeightPxHalf)
-            self.pathEntryWidth = self.screenWidthPx - 125
+
+            self.pathEntryWidth = self.screenWidthPx - self.pathRightMargin
             self.pathEntry.setPos(LPoint3f(-self.screenWidthPxHalf + 15, 0, self.screenHeightPxHalf - 25))
             self.pathEntry["width"] = self.pathEntryWidth/12
+            self.pathEntry.resetFrameSize()
+
+            # reposition top right icons
             x = self.pathEntryWidth/2-28
             self.btnReload.setPos(LPoint3f(x, 0, self.screenHeightPxHalf - 25))
             x += 28
             self.btnFolderUp.setPos(pos=LPoint3f(x, 0, self.screenHeightPxHalf - 25))
             x += 28
             self.btnFolderNew.setPos(pos=LPoint3f(x, 0, self.screenHeightPxHalf - 25))
+            x += 28
+            self.btnFolderShowHidden.setPos(pos=LPoint3f(x, 0, self.screenHeightPxHalf - 25))
+
+            # resize the browsing area
             self.container["frameSize"] = (-self.screenWidthPxHalf+10, self.screenWidthPxHalf-10, -self.screenHeightPxHalf+50, self.screenHeightPxHalf-50)
             # Note: canvas size of the container will be reset in the
             #       folder Reload call at the end of this function

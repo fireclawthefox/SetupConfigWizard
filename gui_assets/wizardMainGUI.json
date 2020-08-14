@@ -18,7 +18,8 @@
         "text_scale": "(12.0, 12.0)",
         "text_pos": "(0.0, 3.0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectButton",
       "parent": "root",
@@ -38,7 +39,8 @@
         "text_scale": "(12.0, 12.0)",
         "text_pos": "(0.0, 4.0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectButton",
       "parent": "root",
@@ -59,7 +61,8 @@
         "text_scale": "(24, 24)",
         "text_pos": "(0, 0)",
         "text_fg": "LVecBase4f(1, 1, 1, 1)",
-        "text_bg": "LVecBase4f(0.25, 0.25, 0.25, 1)"
+        "text_bg": "LVecBase4f(0.25, 0.25, 0.25, 1)",
+        "transparency": "0"
       },
       "type": "DirectLabel",
       "parent": "root",
@@ -79,7 +82,8 @@
         "text_scale": "(12.0, 12.0)",
         "text_pos": "(0.0, 4.0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectButton",
       "parent": "root",
@@ -94,7 +98,8 @@
         "frameSize": "(-250.0, 250.0, -180.0, 150.0)",
         "hpr": "LVecBase3f(0, 0, 0)",
         "pos": "LPoint3f(250, 0, -245)",
-        "relief": "3"
+        "relief": "3",
+        "transparency": "0"
       },
       "type": "DirectFrame",
       "parent": "root",
@@ -114,7 +119,8 @@
         "text_scale": "(12.0, 12.0)",
         "text_pos": "(0, 0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectLabel",
       "parent": "frmMetadata",
@@ -134,204 +140,11 @@
         "text_scale": "(1.0, 1.0)",
         "text_pos": "(0, 0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectEntry",
       "parent": "frmMetadata",
-      "command": null,
-      "extraArgs": null,
-      "extraOptions": {}
-    },
-    "frmPlatforms": {
-      "element": {
-        "borderWidth": "(2, 2)",
-        "frameColor": "(1, 1, 1, 1)",
-        "frameSize": "(-250.0, 250.0, -180.0, 150.0)",
-        "hpr": "LVecBase3f(0, 0, 0)",
-        "pos": "LPoint3f(250, 0, -245)",
-        "relief": "3"
-      },
-      "type": "DirectFrame",
-      "parent": "root",
-      "command": null,
-      "extraArgs": null,
-      "extraOptions": {}
-    },
-    "lblPlatforms": {
-      "element": {
-        "borderWidth": "(2, 2)",
-        "frameColor": "(0.0, 0.0, 0.0, 0.0)",
-        "hpr": "LVecBase3f(0, 0, 0)",
-        "pos": "LPoint3f(0, 0, 110)",
-        "scale": "LVecBase3f(1, 1, 1)",
-        "text": "'Supported Platforms'",
-        "text_align": "TextNode.A_center",
-        "text_scale": "(12.0, 12.0)",
-        "text_pos": "(0, 0)",
-        "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
-      },
-      "type": "DirectLabel",
-      "parent": "frmPlatforms",
-      "command": null,
-      "extraArgs": null,
-      "extraOptions": {}
-    },
-    "cbLinux": {
-      "element": {
-        "borderWidth": "(0.0, 0.0)",
-        "frameSize": "(-250.0, 250.0, -12.25, 27.55)",
-        "hpr": "LVecBase3f(0, 0, 0)",
-        "indicatorValue": "1",
-        "pos": "LPoint3f(0, 0, 65)",
-        "scale": "LVecBase3f(0.5, 0.5, 0.5)",
-        "text": "'Linux'",
-        "indicator_borderWidth": "(2, 2)",
-        "indicator_hpr": "LVecBase3f(0, 0, 0)",
-        "indicator_pos": "LPoint3f(-241.4, 0, 0.449999)",
-        "indicator_relief": "'sunken'",
-        "indicator_text_align": "TextNode.A_center",
-        "indicator_text_scale": "(24, 24)",
-        "indicator_text_pos": "(0, -0.2)",
-        "indicator_text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "indicator_text_bg": "LVecBase4f(0, 0, 0, 0)",
-        "text_align": "TextNode.A_center",
-        "text_scale": "(24.0, 24.0)",
-        "text_pos": "(0, 0)",
-        "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
-      },
-      "type": "DirectCheckButton",
-      "parent": "frmPlatforms",
-      "command": null,
-      "extraArgs": null,
-      "extraOptions": {}
-    },
-    "cbMacOS": {
-      "element": {
-        "borderWidth": "(0.0, 0.0)",
-        "frameSize": "(-250.0, 250.0, -12.25, 27.55)",
-        "hpr": "LVecBase3f(0, 0, 0)",
-        "indicatorValue": "1",
-        "pos": "LPoint3f(0, 0, 35)",
-        "scale": "LVecBase3f(0.5, 0.5, 0.5)",
-        "text": "'MacOS'",
-        "indicator_borderWidth": "(2, 2)",
-        "indicator_hpr": "LVecBase3f(0, 0, 0)",
-        "indicator_pos": "LPoint3f(-241.4, 0, 0.449999)",
-        "indicator_relief": "'sunken'",
-        "indicator_text_align": "TextNode.A_center",
-        "indicator_text_scale": "(24, 24)",
-        "indicator_text_pos": "(0, -0.2)",
-        "indicator_text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "indicator_text_bg": "LVecBase4f(0, 0, 0, 0)",
-        "text_align": "TextNode.A_center",
-        "text_scale": "(24, 24)",
-        "text_pos": "(0, 0)",
-        "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
-      },
-      "type": "DirectCheckButton",
-      "parent": "frmPlatforms",
-      "command": null,
-      "extraArgs": null,
-      "extraOptions": {}
-    },
-    "cbWindows": {
-      "element": {
-        "borderWidth": "(0.0, 0.0)",
-        "frameSize": "(-250.0, 250.0, -12.25, 27.55)",
-        "hpr": "LVecBase3f(0, 0, 0)",
-        "indicatorValue": "1",
-        "pos": "LPoint3f(0, 0, 5)",
-        "scale": "LVecBase3f(0.5, 0.5, 0.5)",
-        "text": "'Windows'",
-        "indicator_borderWidth": "(2, 2)",
-        "indicator_hpr": "LVecBase3f(0, 0, 0)",
-        "indicator_pos": "LPoint3f(-241.4, 0, 0.449999)",
-        "indicator_relief": "'sunken'",
-        "indicator_text_align": "TextNode.A_center",
-        "indicator_text_scale": "(24, 24)",
-        "indicator_text_pos": "(0, -0.2)",
-        "indicator_text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "indicator_text_bg": "LVecBase4f(0, 0, 0, 0)",
-        "text_align": "TextNode.A_center",
-        "text_scale": "(24, 24)",
-        "text_pos": "(0, 0)",
-        "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
-      },
-      "type": "DirectCheckButton",
-      "parent": "frmPlatforms",
-      "command": null,
-      "extraArgs": null,
-      "extraOptions": {}
-    },
-    "cbAndroid": {
-      "element": {
-        "borderWidth": "(0.0, 0.0)",
-        "frameSize": "(-250.0, 250.0, -12.25, 27.55)",
-        "hpr": "LVecBase3f(0, 0, 0)",
-        "pos": "LPoint3f(0, 0, -70)",
-        "scale": "LVecBase3f(0.5, 0.5, 0.5)",
-        "text": "'Android'",
-        "indicator_borderWidth": "(2, 2)",
-        "indicator_hpr": "LVecBase3f(0, 0, 0)",
-        "indicator_pos": "LPoint3f(-241.4, 0, 0.449999)",
-        "indicator_relief": "'sunken'",
-        "indicator_text_align": "TextNode.A_center",
-        "indicator_text_scale": "(24, 24)",
-        "indicator_text_pos": "(0, -0.2)",
-        "indicator_text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "indicator_text_bg": "LVecBase4f(0, 0, 0, 0)",
-        "text_align": "TextNode.A_center",
-        "text_scale": "(24, 24)",
-        "text_pos": "(0, 0)",
-        "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
-      },
-      "type": "DirectCheckButton",
-      "parent": "frmPlatforms",
-      "command": null,
-      "extraArgs": null,
-      "extraOptions": {}
-    },
-    "lblDesktop": {
-      "element": {
-        "borderWidth": "(2, 2)",
-        "frameColor": "(0.0, 0.0, 0.0, 0.0)",
-        "hpr": "LVecBase3f(0, 0, 0)",
-        "pos": "LPoint3f(0, 0, 90)",
-        "scale": "LVecBase3f(1, 1, 1)",
-        "text": "'Desktop'",
-        "text_align": "TextNode.A_center",
-        "text_scale": "(12.0, 12.0)",
-        "text_pos": "(0, 0)",
-        "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
-      },
-      "type": "DirectLabel",
-      "parent": "frmPlatforms",
-      "command": null,
-      "extraArgs": null,
-      "extraOptions": {}
-    },
-    "lblMobile": {
-      "element": {
-        "borderWidth": "(2, 2)",
-        "frameColor": "(0.0, 0.0, 0.0, 0.0)",
-        "hpr": "LVecBase3f(0, 0, 0)",
-        "pos": "LPoint3f(0, 0, -50)",
-        "scale": "LVecBase3f(1, 1, 1)",
-        "text": "'Mobile'",
-        "text_align": "TextNode.A_center",
-        "text_scale": "(12.0, 12.0)",
-        "text_pos": "(0, 0)",
-        "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
-      },
-      "type": "DirectLabel",
-      "parent": "frmPlatforms",
       "command": null,
       "extraArgs": null,
       "extraOptions": {}
@@ -348,7 +161,8 @@
         "text_scale": "(12.0, 12.0)",
         "text_pos": "(0, 0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectLabel",
       "parent": "frmMetadata",
@@ -368,7 +182,8 @@
         "text_scale": "(12.0, 12.0)",
         "text_pos": "(0, 0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectLabel",
       "parent": "frmMetadata",
@@ -388,10 +203,255 @@
         "text_scale": "(1.0, 1.0)",
         "text_pos": "(0, 0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectEntry",
       "parent": "frmMetadata",
+      "command": null,
+      "extraArgs": null,
+      "extraOptions": {}
+    },
+    "txtVersion": {
+      "element": {
+        "borderWidth": "(0.167, 0.167)",
+        "hpr": "LVecBase3f(0, 0, 0)",
+        "overflow": "1",
+        "pos": "LPoint3f(-60, 0, 10)",
+        "scale": "LVecBase3f(12, 12, 12)",
+        "width": "20.0",
+        "text_align": "TextNode.A_left",
+        "text_scale": "(1, 1)",
+        "text_pos": "(0, 0)",
+        "text_fg": "LVecBase4f(0, 0, 0, 1)",
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
+      },
+      "type": "DirectEntry",
+      "parent": "frmMetadata",
+      "command": null,
+      "extraArgs": null,
+      "extraOptions": {}
+    },
+    "lblVersion": {
+      "element": {
+        "borderWidth": "(2, 2)",
+        "frameColor": "(0.8, 0.8, 0.8, 0.0)",
+        "hpr": "LVecBase3f(0, 0, 0)",
+        "pos": "LPoint3f(-140, 0, 10)",
+        "scale": "LVecBase3f(1, 1, 1)",
+        "text": "'Version'",
+        "text_align": "TextNode.A_center",
+        "text_scale": "(12.0, 12.0)",
+        "text_pos": "(0, 0)",
+        "text_fg": "LVecBase4f(0, 0, 0, 1)",
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
+      },
+      "type": "DirectLabel",
+      "parent": "frmMetadata",
+      "command": null,
+      "extraArgs": null,
+      "extraOptions": {}
+    },
+    "frmPlatforms": {
+      "element": {
+        "borderWidth": "(2, 2)",
+        "frameColor": "(1, 1, 1, 1)",
+        "frameSize": "(-250.0, 250.0, -180.0, 150.0)",
+        "hpr": "LVecBase3f(0, 0, 0)",
+        "pos": "LPoint3f(250, 0, -245)",
+        "relief": "3",
+        "transparency": "0"
+      },
+      "type": "DirectFrame",
+      "parent": "root",
+      "command": null,
+      "extraArgs": null,
+      "extraOptions": {}
+    },
+    "lblPlatforms": {
+      "element": {
+        "borderWidth": "(2, 2)",
+        "frameColor": "(0.0, 0.0, 0.0, 0.0)",
+        "hpr": "LVecBase3f(0, 0, 0)",
+        "pos": "LPoint3f(0, 0, 110)",
+        "scale": "LVecBase3f(1, 1, 1)",
+        "text": "'Supported Platforms'",
+        "text_align": "TextNode.A_center",
+        "text_scale": "(12.0, 12.0)",
+        "text_pos": "(0, 0)",
+        "text_fg": "LVecBase4f(0, 0, 0, 1)",
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
+      },
+      "type": "DirectLabel",
+      "parent": "frmPlatforms",
+      "command": null,
+      "extraArgs": null,
+      "extraOptions": {}
+    },
+    "cbLinux": {
+      "element": {
+        "borderWidth": "(0.0, 0.0)",
+        "frameSize": "(-250.0, 250.0, -12.25, 27.55)",
+        "hpr": "LVecBase3f(0, 0, 0)",
+        "indicatorValue": "1",
+        "pos": "LPoint3f(0, 0, 65)",
+        "scale": "LVecBase3f(0.5, 0.5, 0.5)",
+        "text": "'Linux'",
+        "indicator_borderWidth": "(2, 2)",
+        "indicator_hpr": "LVecBase3f(0, 0, 0)",
+        "indicator_pos": "LPoint3f(-241.4, 0, 0.450001)",
+        "indicator_relief": "'sunken'",
+        "indicator_text_align": "TextNode.A_center",
+        "indicator_text_scale": "(24, 24)",
+        "indicator_text_pos": "(0, -0.2)",
+        "indicator_text_fg": "LVecBase4f(0, 0, 0, 1)",
+        "indicator_text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "text_align": "TextNode.A_center",
+        "text_scale": "(24.0, 24.0)",
+        "text_pos": "(0, 0)",
+        "text_fg": "LVecBase4f(0, 0, 0, 1)",
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
+      },
+      "type": "DirectCheckButton",
+      "parent": "frmPlatforms",
+      "command": null,
+      "extraArgs": null,
+      "extraOptions": {}
+    },
+    "cbMacOS": {
+      "element": {
+        "borderWidth": "(0.0, 0.0)",
+        "frameSize": "(-250.0, 250.0, -12.25, 27.55)",
+        "hpr": "LVecBase3f(0, 0, 0)",
+        "indicatorValue": "1",
+        "pos": "LPoint3f(0, 0, 35)",
+        "scale": "LVecBase3f(0.5, 0.5, 0.5)",
+        "text": "'MacOS'",
+        "indicator_borderWidth": "(2, 2)",
+        "indicator_hpr": "LVecBase3f(0, 0, 0)",
+        "indicator_pos": "LPoint3f(-241.4, 0, 0.450001)",
+        "indicator_relief": "'sunken'",
+        "indicator_text_align": "TextNode.A_center",
+        "indicator_text_scale": "(24, 24)",
+        "indicator_text_pos": "(0, -0.2)",
+        "indicator_text_fg": "LVecBase4f(0, 0, 0, 1)",
+        "indicator_text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "text_align": "TextNode.A_center",
+        "text_scale": "(24, 24)",
+        "text_pos": "(0, 0)",
+        "text_fg": "LVecBase4f(0, 0, 0, 1)",
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
+      },
+      "type": "DirectCheckButton",
+      "parent": "frmPlatforms",
+      "command": null,
+      "extraArgs": null,
+      "extraOptions": {}
+    },
+    "cbWindows": {
+      "element": {
+        "borderWidth": "(0.0, 0.0)",
+        "frameSize": "(-250.0, 250.0, -12.25, 27.55)",
+        "hpr": "LVecBase3f(0, 0, 0)",
+        "indicatorValue": "1",
+        "pos": "LPoint3f(0, 0, 5)",
+        "scale": "LVecBase3f(0.5, 0.5, 0.5)",
+        "text": "'Windows'",
+        "indicator_borderWidth": "(2, 2)",
+        "indicator_hpr": "LVecBase3f(0, 0, 0)",
+        "indicator_pos": "LPoint3f(-241.4, 0, 0.450001)",
+        "indicator_relief": "'sunken'",
+        "indicator_text_align": "TextNode.A_center",
+        "indicator_text_scale": "(24, 24)",
+        "indicator_text_pos": "(0, -0.2)",
+        "indicator_text_fg": "LVecBase4f(0, 0, 0, 1)",
+        "indicator_text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "text_align": "TextNode.A_center",
+        "text_scale": "(24, 24)",
+        "text_pos": "(0, 0)",
+        "text_fg": "LVecBase4f(0, 0, 0, 1)",
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
+      },
+      "type": "DirectCheckButton",
+      "parent": "frmPlatforms",
+      "command": null,
+      "extraArgs": null,
+      "extraOptions": {}
+    },
+    "cbAndroid": {
+      "element": {
+        "borderWidth": "(0.0, 0.0)",
+        "frameSize": "(-250.0, 250.0, -12.25, 27.55)",
+        "hpr": "LVecBase3f(0, 0, 0)",
+        "pos": "LPoint3f(0, 0, -70)",
+        "scale": "LVecBase3f(0.5, 0.5, 0.5)",
+        "text": "'Android'",
+        "indicator_borderWidth": "(2, 2)",
+        "indicator_hpr": "LVecBase3f(0, 0, 0)",
+        "indicator_pos": "LPoint3f(-241.4, 0, 0.450001)",
+        "indicator_relief": "'sunken'",
+        "indicator_text_align": "TextNode.A_center",
+        "indicator_text_scale": "(24, 24)",
+        "indicator_text_pos": "(0, -0.2)",
+        "indicator_text_fg": "LVecBase4f(0, 0, 0, 1)",
+        "indicator_text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "text_align": "TextNode.A_center",
+        "text_scale": "(24, 24)",
+        "text_pos": "(0, 0)",
+        "text_fg": "LVecBase4f(0, 0, 0, 1)",
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
+      },
+      "type": "DirectCheckButton",
+      "parent": "frmPlatforms",
+      "command": null,
+      "extraArgs": null,
+      "extraOptions": {}
+    },
+    "lblDesktop": {
+      "element": {
+        "borderWidth": "(2, 2)",
+        "frameColor": "(0.0, 0.0, 0.0, 0.0)",
+        "hpr": "LVecBase3f(0, 0, 0)",
+        "pos": "LPoint3f(0, 0, 90)",
+        "scale": "LVecBase3f(1, 1, 1)",
+        "text": "'Desktop'",
+        "text_align": "TextNode.A_center",
+        "text_scale": "(12.0, 12.0)",
+        "text_pos": "(0, 0)",
+        "text_fg": "LVecBase4f(0, 0, 0, 1)",
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
+      },
+      "type": "DirectLabel",
+      "parent": "frmPlatforms",
+      "command": null,
+      "extraArgs": null,
+      "extraOptions": {}
+    },
+    "lblMobile": {
+      "element": {
+        "borderWidth": "(2, 2)",
+        "frameColor": "(0.0, 0.0, 0.0, 0.0)",
+        "hpr": "LVecBase3f(0, 0, 0)",
+        "pos": "LPoint3f(0, 0, -50)",
+        "scale": "LVecBase3f(1, 1, 1)",
+        "text": "'Mobile'",
+        "text_align": "TextNode.A_center",
+        "text_scale": "(12.0, 12.0)",
+        "text_pos": "(0, 0)",
+        "text_fg": "LVecBase4f(0, 0, 0, 1)",
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
+      },
+      "type": "DirectLabel",
+      "parent": "frmPlatforms",
       "command": null,
       "extraArgs": null,
       "extraOptions": {}
@@ -403,7 +463,8 @@
         "frameSize": "(-250.0, 250.0, -180.0, 150.0)",
         "hpr": "LVecBase3f(0, 0, 0)",
         "pos": "LPoint3f(250, 0, -245)",
-        "relief": "3"
+        "relief": "3",
+        "transparency": "0"
       },
       "type": "DirectFrame",
       "parent": "root",
@@ -423,9 +484,57 @@
         "text_scale": "(12.0, 12.0)",
         "text_pos": "(0, 0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectLabel",
+      "parent": "frmPlugins",
+      "command": null,
+      "extraArgs": null,
+      "extraOptions": {}
+    },
+    "frmPluginSelection": {
+      "element": {
+        "canvasSize": "(-215.0, 215.0, -300.0, 0.0)",
+        "frameColor": "(1, 1, 1, 1)",
+        "frameSize": "(-225.0, 225.0, -240.0, 0.0)",
+        "hpr": "LVecBase3f(0, 0, 0)",
+        "pos": "LPoint3f(0, 0, 80)",
+        "scrollBarWidth": "20",
+        "state": "'normal'",
+        "horizontalScroll_borderWidth": "(2, 2)",
+        "horizontalScroll_frameSize": "(-0.05, 0.05, -10.0, 10.0)",
+        "horizontalScroll_hpr": "LVecBase3f(0, 0, 0)",
+        "horizontalScroll_pos": "LPoint3f(0, 0, 0)",
+        "horizontalScroll_decButton_borderWidth": "(2, 2)",
+        "horizontalScroll_decButton_frameSize": "(-0.05, 0.05, -10.0, 10.0)",
+        "horizontalScroll_decButton_hpr": "LVecBase3f(0, 0, 0)",
+        "horizontalScroll_decButton_pos": "LPoint3f(0, 0, 0)",
+        "horizontalScroll_incButton_borderWidth": "(2, 2)",
+        "horizontalScroll_incButton_frameSize": "(-0.05, 0.05, -10.0, 10.0)",
+        "horizontalScroll_incButton_hpr": "LVecBase3f(0, 0, 0)",
+        "horizontalScroll_incButton_pos": "LPoint3f(0, 0, 0)",
+        "horizontalScroll_thumb_borderWidth": "(2, 2)",
+        "horizontalScroll_thumb_hpr": "LVecBase3f(0, 0, 0)",
+        "horizontalScroll_thumb_pos": "LPoint3f(0, 0, 0)",
+        "verticalScroll_borderWidth": "(2, 2)",
+        "verticalScroll_frameSize": "(-10.0, 10.0, -0.05, 0.05)",
+        "verticalScroll_hpr": "LVecBase3f(0, 0, 0)",
+        "verticalScroll_pos": "LPoint3f(0, 0, 0)",
+        "verticalScroll_decButton_borderWidth": "(2, 2)",
+        "verticalScroll_decButton_frameSize": "(-10.0, 10.0, -0.05, 0.05)",
+        "verticalScroll_decButton_hpr": "LVecBase3f(0, 0, 0)",
+        "verticalScroll_decButton_pos": "LPoint3f(215, 0, -10)",
+        "verticalScroll_incButton_borderWidth": "(2, 2)",
+        "verticalScroll_incButton_frameSize": "(-10.0, 10.0, -0.05, 0.05)",
+        "verticalScroll_incButton_hpr": "LVecBase3f(0, 0, 0)",
+        "verticalScroll_incButton_pos": "LPoint3f(215, 0, -230)",
+        "verticalScroll_thumb_borderWidth": "(2, 2)",
+        "verticalScroll_thumb_hpr": "LVecBase3f(0, 0, 0)",
+        "verticalScroll_thumb_pos": "LPoint3f(215, 0, -100)",
+        "transparency": "0"
+      },
+      "type": "DirectScrolledFrame",
       "parent": "frmPlugins",
       "command": null,
       "extraArgs": null,
@@ -438,7 +547,8 @@
         "frameSize": "(-250.0, 250.0, -180.0, 150.0)",
         "hpr": "LVecBase3f(0, 0, 0)",
         "pos": "LPoint3f(250, 0, -245)",
-        "relief": "3"
+        "relief": "3",
+        "transparency": "0"
       },
       "type": "DirectFrame",
       "parent": "root",
@@ -458,7 +568,8 @@
         "text_scale": "(12.0, 12.0)",
         "text_pos": "(0, 0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectLabel",
       "parent": "frmApplications",
@@ -478,7 +589,8 @@
         "text_scale": "(24, 24)",
         "text_pos": "(0, 0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectButton",
       "parent": "frmApplications",
@@ -524,7 +636,8 @@
         "verticalScroll_incButton_pos": "LPoint3f(215, 0, -190)",
         "verticalScroll_thumb_borderWidth": "(2, 2)",
         "verticalScroll_thumb_hpr": "LVecBase3f(0, 0, 0)",
-        "verticalScroll_thumb_pos": "LPoint3f(215, 0, -73.3333)"
+        "verticalScroll_thumb_pos": "LPoint3f(215, 0, -73.3333)",
+        "transparency": "0"
       },
       "type": "DirectScrolledFrame",
       "parent": "frmApplications",
@@ -532,48 +645,65 @@
       "extraArgs": null,
       "extraOptions": {}
     },
-    "frmPluginSelection": {
+    "lblNameCol": {
       "element": {
-        "canvasSize": "(-215.0, 215.0, -300.0, 0.0)",
-        "frameColor": "(1, 1, 1, 1)",
-        "frameSize": "(-225.0, 225.0, -240.0, 0.0)",
+        "borderWidth": "(2, 2)",
+        "frameColor": "(0.8, 0.8, 0.8, 0.0)",
         "hpr": "LVecBase3f(0, 0, 0)",
-        "pos": "LPoint3f(0, 0, 80)",
-        "scrollBarWidth": "20",
-        "state": "'normal'",
-        "horizontalScroll_borderWidth": "(2, 2)",
-        "horizontalScroll_frameSize": "(-0.05, 0.05, -10.0, 10.0)",
-        "horizontalScroll_hpr": "LVecBase3f(0, 0, 0)",
-        "horizontalScroll_pos": "LPoint3f(0, 0, 0)",
-        "horizontalScroll_decButton_borderWidth": "(2, 2)",
-        "horizontalScroll_decButton_frameSize": "(-0.05, 0.05, -10.0, 10.0)",
-        "horizontalScroll_decButton_hpr": "LVecBase3f(0, 0, 0)",
-        "horizontalScroll_decButton_pos": "LPoint3f(0, 0, 0)",
-        "horizontalScroll_incButton_borderWidth": "(2, 2)",
-        "horizontalScroll_incButton_frameSize": "(-0.05, 0.05, -10.0, 10.0)",
-        "horizontalScroll_incButton_hpr": "LVecBase3f(0, 0, 0)",
-        "horizontalScroll_incButton_pos": "LPoint3f(0, 0, 0)",
-        "horizontalScroll_thumb_borderWidth": "(2, 2)",
-        "horizontalScroll_thumb_hpr": "LVecBase3f(0, 0, 0)",
-        "horizontalScroll_thumb_pos": "LPoint3f(0, 0, 0)",
-        "verticalScroll_borderWidth": "(2, 2)",
-        "verticalScroll_frameSize": "(-10.0, 10.0, -0.05, 0.05)",
-        "verticalScroll_hpr": "LVecBase3f(0, 0, 0)",
-        "verticalScroll_pos": "LPoint3f(0, 0, 0)",
-        "verticalScroll_decButton_borderWidth": "(2, 2)",
-        "verticalScroll_decButton_frameSize": "(-10.0, 10.0, -0.05, 0.05)",
-        "verticalScroll_decButton_hpr": "LVecBase3f(0, 0, 0)",
-        "verticalScroll_decButton_pos": "LPoint3f(215, 0, -10)",
-        "verticalScroll_incButton_borderWidth": "(2, 2)",
-        "verticalScroll_incButton_frameSize": "(-10.0, 10.0, -0.05, 0.05)",
-        "verticalScroll_incButton_hpr": "LVecBase3f(0, 0, 0)",
-        "verticalScroll_incButton_pos": "LPoint3f(215, 0, -230)",
-        "verticalScroll_thumb_borderWidth": "(2, 2)",
-        "verticalScroll_thumb_hpr": "LVecBase3f(0, 0, 0)",
-        "verticalScroll_thumb_pos": "LPoint3f(215, 0, -100)"
+        "pos": "LPoint3f(-220, 0, 45)",
+        "scale": "LVecBase3f(1, 1, 1)",
+        "text": "'Name'",
+        "text_align": "TextNode.A_left",
+        "text_scale": "(12.0, 12.0)",
+        "text_pos": "(0, 0)",
+        "text_fg": "LVecBase4f(0, 0, 0, 1)",
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
-      "type": "DirectScrolledFrame",
-      "parent": "frmPlugins",
+      "type": "DirectLabel",
+      "parent": "frmApplications",
+      "command": null,
+      "extraArgs": null,
+      "extraOptions": {}
+    },
+    "lblPathCol": {
+      "element": {
+        "borderWidth": "(2, 2)",
+        "frameColor": "(0.8, 0.8, 0.8, 0.0)",
+        "hpr": "LVecBase3f(0, 0, 0)",
+        "pos": "LPoint3f(-95, 0, 45)",
+        "scale": "LVecBase3f(1, 1, 1)",
+        "text": "'Path'",
+        "text_align": "TextNode.A_left",
+        "text_scale": "(12.0, 12.0)",
+        "text_pos": "(0, 0)",
+        "text_fg": "LVecBase4f(0, 0, 0, 1)",
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
+      },
+      "type": "DirectLabel",
+      "parent": "frmApplications",
+      "command": null,
+      "extraArgs": null,
+      "extraOptions": {}
+    },
+    "lblTerminalCol": {
+      "element": {
+        "borderWidth": "(2, 2)",
+        "frameColor": "(0.8, 0.8, 0.8, 0.0)",
+        "hpr": "LVecBase3f(0, 0, 0)",
+        "pos": "LPoint3f(100, 0, 45)",
+        "scale": "LVecBase3f(1, 1, 1)",
+        "text": "'Terminal App'",
+        "text_align": "TextNode.A_center",
+        "text_scale": "(12.0, 12.0)",
+        "text_pos": "(0, 0)",
+        "text_fg": "LVecBase4f(0, 0, 0, 1)",
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
+      },
+      "type": "DirectLabel",
+      "parent": "frmApplications",
       "command": null,
       "extraArgs": null,
       "extraOptions": {}
@@ -583,6 +713,7 @@
         "borderWidth": "(0.0, 0.0)",
         "frameSize": "(-86.25, 69.65, -6.25, 21.55)",
         "hpr": "LVecBase3f(0, 0, 0)",
+        "indicatorValue": "1",
         "others": [
           "rbMetadata",
           "rbPlatforms",
@@ -597,7 +728,7 @@
         "text": "'Metadata'",
         "indicator_borderWidth": "(2, 2)",
         "indicator_hpr": "LVecBase3f(0, 0, 0)",
-        "indicator_pos": "LPoint3f(-77.65, 0, 0.449999)",
+        "indicator_pos": "LPoint3f(-77.65, 0, 0.450001)",
         "indicator_relief": "3",
         "indicator_text_align": "TextNode.A_center",
         "indicator_text_scale": "(24, 24)",
@@ -608,7 +739,8 @@
         "text_scale": "(24, 24)",
         "text_pos": "(0, 0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectRadioButton",
       "parent": "root",
@@ -624,6 +756,7 @@
         "borderWidth": "(0.0, 0.0)",
         "frameSize": "(-86.25, 69.65, -6.25, 21.55)",
         "hpr": "LVecBase3f(0, 0, 0)",
+        "indicatorValue": "1",
         "others": [
           "rbMetadata",
           "rbPlatforms",
@@ -638,7 +771,7 @@
         "text": "'Platforms'",
         "indicator_borderWidth": "(2, 2)",
         "indicator_hpr": "LVecBase3f(0, 0, 0)",
-        "indicator_pos": "LPoint3f(-77.65, 0, 0.449999)",
+        "indicator_pos": "LPoint3f(-77.65, 0, 0.450001)",
         "indicator_relief": "3",
         "indicator_text_align": "TextNode.A_center",
         "indicator_text_scale": "(24, 24)",
@@ -649,7 +782,8 @@
         "text_scale": "(24, 24)",
         "text_pos": "(0, 0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectRadioButton",
       "parent": "root",
@@ -665,6 +799,7 @@
         "borderWidth": "(0.0, 0.0)",
         "frameSize": "(-86.25, 69.65, -7.8, 21.55)",
         "hpr": "LVecBase3f(0, 0, 0)",
+        "indicatorValue": "1",
         "others": [
           "rbMetadata",
           "rbPlatforms",
@@ -679,7 +814,7 @@
         "text": "'Plugins'",
         "indicator_borderWidth": "(2, 2)",
         "indicator_hpr": "LVecBase3f(0, 0, 0)",
-        "indicator_pos": "LPoint3f(-77.65, 0, -0.325001)",
+        "indicator_pos": "LPoint3f(-77.65, 0, -0.324999)",
         "indicator_relief": "3",
         "indicator_text_align": "TextNode.A_center",
         "indicator_text_scale": "(24, 24)",
@@ -690,7 +825,8 @@
         "text_scale": "(24, 24)",
         "text_pos": "(0, 0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectRadioButton",
       "parent": "root",
@@ -706,6 +842,7 @@
         "borderWidth": "(0.0, 0.0)",
         "frameSize": "(-86.25, 69.65, -8.1, 21.55)",
         "hpr": "LVecBase3f(0, 0, 0)",
+        "indicatorValue": "1",
         "others": [
           "rbMetadata",
           "rbPlatforms",
@@ -720,7 +857,7 @@
         "text": "'Applications'",
         "indicator_borderWidth": "(2, 2)",
         "indicator_hpr": "LVecBase3f(0, 0, 0)",
-        "indicator_pos": "LPoint3f(-77.65, 0, -0.475001)",
+        "indicator_pos": "LPoint3f(-77.65, 0, -0.474999)",
         "indicator_relief": "3",
         "indicator_text_align": "TextNode.A_center",
         "indicator_text_scale": "(24, 24)",
@@ -731,7 +868,8 @@
         "text_scale": "(24, 24)",
         "text_pos": "(0, 0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectRadioButton",
       "parent": "root",
@@ -747,6 +885,7 @@
         "borderWidth": "(0.0, 0.0)",
         "frameSize": "(-86.25, 69.65, -8.1, 21.55)",
         "hpr": "LVecBase3f(0, 0, 0)",
+        "indicatorValue": "1",
         "others": [
           "rbMetadata",
           "rbPlatforms",
@@ -761,7 +900,7 @@
         "text": "'Include'",
         "indicator_borderWidth": "(2, 2)",
         "indicator_hpr": "LVecBase3f(0, 0, 0)",
-        "indicator_pos": "LPoint3f(-77.65, 0, -0.475001)",
+        "indicator_pos": "LPoint3f(-77.65, 0, -0.474999)",
         "indicator_relief": "3",
         "indicator_text_align": "TextNode.A_center",
         "indicator_text_scale": "(24, 24)",
@@ -772,7 +911,8 @@
         "text_scale": "(24, 24)",
         "text_pos": "(0, 0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectRadioButton",
       "parent": "root",
@@ -790,7 +930,8 @@
         "frameSize": "(-250.0, 250.0, -180.0, 150.0)",
         "hpr": "LVecBase3f(0, 0, 0)",
         "pos": "LPoint3f(250, 0, -245)",
-        "relief": "3"
+        "relief": "3",
+        "transparency": "0"
       },
       "type": "DirectFrame",
       "parent": "root",
@@ -810,7 +951,8 @@
         "text_scale": "(24, 24)",
         "text_pos": "(0, 0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectButton",
       "parent": "frmInclude",
@@ -830,7 +972,8 @@
         "text_scale": "(12.0, 12.0)",
         "text_pos": "(0, 0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectLabel",
       "parent": "frmInclude",
@@ -876,70 +1019,11 @@
         "verticalScroll_incButton_pos": "LPoint3f(215, 0, -190)",
         "verticalScroll_thumb_borderWidth": "(2, 2)",
         "verticalScroll_thumb_hpr": "LVecBase3f(0, 0, 0)",
-        "verticalScroll_thumb_pos": "LPoint3f(215, 0, -73.3333)"
+        "verticalScroll_thumb_pos": "LPoint3f(215, 0, -73.3333)",
+        "transparency": "0"
       },
       "type": "DirectScrolledFrame",
       "parent": "frmInclude",
-      "command": null,
-      "extraArgs": null,
-      "extraOptions": {}
-    },
-    "lblNameCol": {
-      "element": {
-        "borderWidth": "(2, 2)",
-        "frameColor": "(0.8, 0.8, 0.8, 0.0)",
-        "hpr": "LVecBase3f(0, 0, 0)",
-        "pos": "LPoint3f(-220, 0, 45)",
-        "scale": "LVecBase3f(1, 1, 1)",
-        "text": "'Name'",
-        "text_align": "TextNode.A_left",
-        "text_scale": "(12.0, 12.0)",
-        "text_pos": "(0, 0)",
-        "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
-      },
-      "type": "DirectLabel",
-      "parent": "frmApplications",
-      "command": null,
-      "extraArgs": null,
-      "extraOptions": {}
-    },
-    "lblPathCol": {
-      "element": {
-        "borderWidth": "(2, 2)",
-        "frameColor": "(0.8, 0.8, 0.8, 0.0)",
-        "hpr": "LVecBase3f(0, 0, 0)",
-        "pos": "LPoint3f(-95, 0, 45)",
-        "scale": "LVecBase3f(1, 1, 1)",
-        "text": "'Path'",
-        "text_align": "TextNode.A_left",
-        "text_scale": "(12.0, 12.0)",
-        "text_pos": "(0, 0)",
-        "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
-      },
-      "type": "DirectLabel",
-      "parent": "frmApplications",
-      "command": null,
-      "extraArgs": null,
-      "extraOptions": {}
-    },
-    "lblTerminalCol": {
-      "element": {
-        "borderWidth": "(2, 2)",
-        "frameColor": "(0.8, 0.8, 0.8, 0.0)",
-        "hpr": "LVecBase3f(0, 0, 0)",
-        "pos": "LPoint3f(100, 0, 45)",
-        "scale": "LVecBase3f(1, 1, 1)",
-        "text": "'Terminal App'",
-        "text_align": "TextNode.A_center",
-        "text_scale": "(12.0, 12.0)",
-        "text_pos": "(0, 0)",
-        "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
-      },
-      "type": "DirectLabel",
-      "parent": "frmApplications",
       "command": null,
       "extraArgs": null,
       "extraOptions": {}
@@ -956,7 +1040,8 @@
         "text_scale": "(12.0, 12.0)",
         "text_pos": "(0, 0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectLabel",
       "parent": "frmInclude",
@@ -971,7 +1056,8 @@
         "frameSize": "(-250.0, 250.0, -180.0, 150.0)",
         "hpr": "LVecBase3f(0, 0, 0)",
         "pos": "LPoint3f(250, 0, -245)",
-        "relief": "3"
+        "relief": "3",
+        "transparency": "0"
       },
       "type": "DirectFrame",
       "parent": "root",
@@ -991,7 +1077,8 @@
         "text_scale": "(12.0, 12.0)",
         "text_pos": "(0, 0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectLabel",
       "parent": "frmExclude",
@@ -1011,7 +1098,8 @@
         "text_scale": "(24, 24)",
         "text_pos": "(0, 0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectButton",
       "parent": "frmExclude",
@@ -1031,7 +1119,8 @@
         "text_scale": "(12.0, 12.0)",
         "text_pos": "(0, 0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectLabel",
       "parent": "frmExclude",
@@ -1077,7 +1166,8 @@
         "verticalScroll_incButton_pos": "LPoint3f(215, 0, -190)",
         "verticalScroll_thumb_borderWidth": "(2, 2)",
         "verticalScroll_thumb_hpr": "LVecBase3f(0, 0, 0)",
-        "verticalScroll_thumb_pos": "LPoint3f(215, 0, -73.3333)"
+        "verticalScroll_thumb_pos": "LPoint3f(215, 0, -73.3333)",
+        "transparency": "0"
       },
       "type": "DirectScrolledFrame",
       "parent": "frmExclude",
@@ -1090,6 +1180,7 @@
         "borderWidth": "(0.0, 0.0)",
         "frameSize": "(-86.25, 69.65, -8.1, 21.55)",
         "hpr": "LVecBase3f(0, 0, 0)",
+        "indicatorValue": "1",
         "others": [
           "rbMetadata",
           "rbPlatforms",
@@ -1104,7 +1195,7 @@
         "text": "'Exclude'",
         "indicator_borderWidth": "(2, 2)",
         "indicator_hpr": "LVecBase3f(0, 0, 0)",
-        "indicator_pos": "LPoint3f(-77.65, 0, -0.475001)",
+        "indicator_pos": "LPoint3f(-77.65, 0, -0.474999)",
         "indicator_relief": "3",
         "indicator_text_align": "TextNode.A_center",
         "indicator_text_scale": "(24, 24)",
@@ -1115,7 +1206,8 @@
         "text_scale": "(24, 24)",
         "text_pos": "(0, 0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectRadioButton",
       "parent": "root",
@@ -1126,46 +1218,6 @@
         "value": []
       }
     },
-    "txtVersion": {
-      "element": {
-        "borderWidth": "(0.167, 0.167)",
-        "hpr": "LVecBase3f(0, 0, 0)",
-        "overflow": "1",
-        "pos": "LPoint3f(-60, 0, 10)",
-        "scale": "LVecBase3f(12, 12, 12)",
-        "width": "20.0",
-        "text_align": "TextNode.A_left",
-        "text_scale": "(1, 1)",
-        "text_pos": "(0, 0)",
-        "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
-      },
-      "type": "DirectEntry",
-      "parent": "frmMetadata",
-      "command": null,
-      "extraArgs": null,
-      "extraOptions": {}
-    },
-    "lblVersion": {
-      "element": {
-        "borderWidth": "(2, 2)",
-        "frameColor": "(0.8, 0.8, 0.8, 0.0)",
-        "hpr": "LVecBase3f(0, 0, 0)",
-        "pos": "LPoint3f(-140, 0, 10)",
-        "scale": "LVecBase3f(1, 1, 1)",
-        "text": "'Version'",
-        "text_align": "TextNode.A_center",
-        "text_scale": "(12.0, 12.0)",
-        "text_pos": "(0, 0)",
-        "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
-      },
-      "type": "DirectLabel",
-      "parent": "frmMetadata",
-      "command": null,
-      "extraArgs": null,
-      "extraOptions": {}
-    },
     "frmAdvanced": {
       "element": {
         "borderWidth": "(2, 2)",
@@ -1173,7 +1225,8 @@
         "frameSize": "(-250.0, 250.0, -180.0, 150.0)",
         "hpr": "LVecBase3f(0, 0, 0)",
         "pos": "LPoint3f(250, 0, -245)",
-        "relief": "3"
+        "relief": "3",
+        "transparency": "0"
       },
       "type": "DirectFrame",
       "parent": "root",
@@ -1193,7 +1246,8 @@
         "text_scale": "(12.0, 12.0)",
         "text_pos": "(0, 0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectLabel",
       "parent": "frmAdvanced",
@@ -1213,7 +1267,8 @@
         "text_scale": "(12.0, 12.0)",
         "text_pos": "(0, 0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectLabel",
       "parent": "frmAdvanced",
@@ -1225,6 +1280,7 @@
       "element": {
         "borderWidth": "(0.167, 0.167)",
         "hpr": "LVecBase3f(0, 0, 0)",
+        "overflow": "1",
         "pos": "LPoint3f(-60, 0, 70)",
         "scale": "LVecBase3f(12, 12, 12)",
         "width": "20.0",
@@ -1232,7 +1288,8 @@
         "text_scale": "(1, 1)",
         "text_pos": "(0, 0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectEntry",
       "parent": "frmAdvanced",
@@ -1252,7 +1309,8 @@
         "text_scale": "(12.0, 12.0)",
         "text_pos": "(0, 0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectLabel",
       "parent": "frmAdvanced",
@@ -1264,6 +1322,7 @@
       "element": {
         "borderWidth": "(0.167, 0.167)",
         "hpr": "LVecBase3f(0, 0, 0)",
+        "overflow": "1",
         "pos": "LPoint3f(-60, 0, 40)",
         "scale": "LVecBase3f(12, 12, 12)",
         "width": "20.0",
@@ -1271,7 +1330,8 @@
         "text_scale": "(1, 1)",
         "text_pos": "(0, 0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectEntry",
       "parent": "frmAdvanced",
@@ -1291,7 +1351,8 @@
         "text_scale": "(12.0, 12.0)",
         "text_pos": "(0, 0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectLabel",
       "parent": "frmAdvanced",
@@ -1319,7 +1380,8 @@
         "text_scale": "(12.0, 12.0)",
         "text_pos": "(0, 0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectCheckButton",
       "parent": "frmAdvanced",
@@ -1339,7 +1401,8 @@
         "text_scale": "(12.0, 12.0)",
         "text_pos": "(0, 0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectLabel",
       "parent": "frmAdvanced",
@@ -1351,6 +1414,7 @@
       "element": {
         "borderWidth": "(0.167, 0.167)",
         "hpr": "LVecBase3f(0, 0, 0)",
+        "overflow": "1",
         "pos": "LPoint3f(-60, 0, -20)",
         "scale": "LVecBase3f(12, 12, 12)",
         "width": "20.0",
@@ -1358,7 +1422,50 @@
         "text_scale": "(1, 1)",
         "text_pos": "(0, 0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
+      },
+      "type": "DirectEntry",
+      "parent": "frmAdvanced",
+      "command": null,
+      "extraArgs": null,
+      "extraOptions": {}
+    },
+    "lblDistDir": {
+      "element": {
+        "borderWidth": "(2, 2)",
+        "frameColor": "(0.8, 0.8, 0.8, 0.0)",
+        "hpr": "LVecBase3f(0, 0, 0)",
+        "pos": "LPoint3f(-180, 0, -50)",
+        "scale": "LVecBase3f(1, 1, 1)",
+        "text": "'Distribution directory'",
+        "text_align": "TextNode.A_center",
+        "text_scale": "(12.0, 12.0)",
+        "text_pos": "(0, 0)",
+        "text_fg": "LVecBase4f(0, 0, 0, 1)",
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
+      },
+      "type": "DirectLabel",
+      "parent": "frmAdvanced",
+      "command": null,
+      "extraArgs": null,
+      "extraOptions": {}
+    },
+    "txtDistDir": {
+      "element": {
+        "borderWidth": "(0.167, 0.167)",
+        "hpr": "LVecBase3f(0, 0, 0)",
+        "overflow": "1",
+        "pos": "LPoint3f(-60, 0, -50)",
+        "scale": "LVecBase3f(12, 12, 12)",
+        "width": "20.0",
+        "text_align": "TextNode.A_left",
+        "text_scale": "(1, 1)",
+        "text_pos": "(0, 0)",
+        "text_fg": "LVecBase4f(0, 0, 0, 1)",
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectEntry",
       "parent": "frmAdvanced",
@@ -1371,21 +1478,21 @@
         "borderWidth": "(0.0, 0.0)",
         "hpr": "LVecBase3f(0, 0, 0)",
         "indicatorValue": "1",
+        "others": [
+          "rbMetadata",
+          "rbPlatforms",
+          "rbPlugins",
+          "rbApplications",
+          "rbInclude",
+          "rbExclude",
+          "rbAdvanced"
+        ],
         "pos": "LPoint3f(350, 0, -65)",
         "scale": "LVecBase3f(0.5, 0.5, 0.5)",
         "text": "'Advanced'",
-        "others": [
-          "rbExclude",
-          "rbInclude",
-          "rbApplications",
-          "rbPlugins",
-          "rbPlatforms",
-          "rbMetadata",
-          "rbAdvanced"
-        ],
         "indicator_borderWidth": "(2, 2)",
         "indicator_hpr": "LVecBase3f(0, 0, 0)",
-        "indicator_pos": "LPoint3f(-75.65, 0, 0.449999)",
+        "indicator_pos": "LPoint3f(-64.55, 0, 0.150002)",
         "indicator_relief": "3",
         "indicator_text_align": "TextNode.A_center",
         "indicator_text_scale": "(24, 24)",
@@ -1396,7 +1503,8 @@
         "text_scale": "(24, 24)",
         "text_pos": "(0, 0)",
         "text_fg": "LVecBase4f(0, 0, 0, 1)",
-        "text_bg": "LVecBase4f(0, 0, 0, 0)"
+        "text_bg": "LVecBase4f(0, 0, 0, 0)",
+        "transparency": "0"
       },
       "type": "DirectRadioButton",
       "parent": "root",
